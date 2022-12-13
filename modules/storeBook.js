@@ -3,7 +3,7 @@ const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 
 export default class BookStore {
-  storeBook() {
+  static storeBook() {
     const newBook = {
       name: title.value,
       author: author.value,

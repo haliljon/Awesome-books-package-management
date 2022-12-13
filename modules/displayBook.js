@@ -1,9 +1,10 @@
 const bookDisplayContainer = document.querySelector('.bookDisplayContainer');
-const information = JSON.parse(localStorage.getItem('books')) || [];
 
 export default class DisplayBooks {
+  information = JSON.parse(localStorage.getItem('books')) || [];
+
   displayBook() {
-    information.forEach((book) => {
+    this.information.forEach((book) => {
       const bookTitle = document.createElement('p');
       const remove = document.createElement('button');
       remove.textContent = 'Remove';
@@ -15,6 +16,5 @@ export default class DisplayBooks {
       bookDiv.append(bookTitle, remove);
       bookDisplayContainer.appendChild(bookDiv);
     });
-    
   }
 }
