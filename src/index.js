@@ -1,8 +1,16 @@
+import { DateTime } from 'luxon';
 import DisplayBooks from '../modules/displayBook';
 import BookStore from '../modules/storeBook';
 import RemoveBook from '../modules/removeBook';
 import NavbarFunctionality from '../modules/navbarFunctionality';
 import './index.css';
+
+const dateTime = () => {
+  let dateTime = DateTime.now();
+  dateTime = dateTime.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  document.querySelector('#current-date-time').innerHTML = dateTime;
+};
+setInterval(dateTime, 1000);
 
 const displayBooks = new DisplayBooks();
 const storeBook = new BookStore();
